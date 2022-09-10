@@ -30,7 +30,7 @@ public class AppUtils {
     public static int retryParseInt() {
         int result;
         do {
-            System.out.println("➠ ");
+            System.out.print("➠ ");
             try {
                 result = Integer.parseInt(scanner.nextLine());
                 return result;
@@ -42,7 +42,7 @@ public class AppUtils {
     public static double retryParseDouble() {
         double result;
         do {
-            System.out.println("➠ ");
+            System.out.print("➠ ");
             try {
                 result = Double.parseDouble(scanner.nextLine());
                 return result;
@@ -53,10 +53,10 @@ public class AppUtils {
     }
     public static String retrySring(String fieldName) {
         String result;
-        System.out.println(" ⭆ ");
-        while ((result= scanner.nextLine()).isEmpty()) {
+        System.out.print("⭆ ");
+        while ((result= scanner.nextLine().toLowerCase()).isEmpty()) {
             System.out.printf("%s không được để trống\n", fieldName);
-            System.out.print(" ⭆ ");
+            System.out.print("⭆ ");
         }
         return result;
     }
@@ -85,8 +85,8 @@ public class AppUtils {
                 default:
                     throw new IllegalStateException("Unexpected value " + inputOption);
             }
-            System.out.println(" ➠ ");
-            String option = scanner.nextLine();
+            System.out.print("➠ ");
+            String option = scanner.nextLine().toLowerCase();
             switch (option) {
                 case "y":
                     return true;
