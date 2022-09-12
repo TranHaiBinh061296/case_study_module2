@@ -9,9 +9,6 @@ public class OrderViewLaucher {
     static Scanner scanner = new Scanner(System.in);
     static OrderView orderView = new OrderView();
 
-    public static void main(String[] args) {
-        runOrder();
-    }
     public static void runOrder() {
         int choice;
         do {

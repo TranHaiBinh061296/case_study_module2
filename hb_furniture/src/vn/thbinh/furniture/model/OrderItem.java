@@ -40,23 +40,16 @@ public class OrderItem {
     }
 
 
-    public OrderItem(long id, String nameAcs, double price, int quantity, long productId, String nameAcs1, double total) {
-        this.id =id;
-        this.name = nameAcs;
+
+    public OrderItem(long idAcs, double price, int quantity, long orderId, String namePrt, double total) {
+        this.id =idAcs;
         this.price = price;
         this.quantity = quantity;
-        this.orderId = productId;
-        this.productName = nameAcs1;
+        this.orderId = orderId;
+        this.productName = namePrt;
         this.total = total;
     }
 
-//    public OrderItem(long id, double price, int quantity, long orderId, int idPrt, String namePrt, double total) {
-//        this.id = id;
-//        this.price = price;
-//        this.quantity = quantity;
-//        this.orderId = orderId;
-//        this. = idPrt;
-//    }
 
     public long getId() {
         return id;

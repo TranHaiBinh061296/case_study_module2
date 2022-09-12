@@ -26,8 +26,9 @@ public class OrderView {
         orderItemService = OrderItemService.getInstance();
     }
 
-    public OrderItem addOrderItem(long productId) {
-        orderItemService.findAll();
+    public OrderItem addOrderItem(long orderId) {
+//        orderItemService.findAll();
+        List<OrderItem> orderItems = new ArrayList<>();
         long id = System.currentTimeMillis() / 1000;
         System.out.println("Nhập Id sản phẩm muốn mua");
         System.out.print(" ⭆ ");
@@ -54,12 +55,12 @@ public class OrderView {
             System.out.print(" ⭆ ");
             quantity = scanner.nextInt();
         }
-        String nameAcs = product.getName();
+        String namePrt = product.getName();
         double total = quantity * product.getPrice();
         int currentQuantity = oldQuantity - quantity;
         product.setQuantity(currentQuantity);
 
-        OrderItem orderItem = new OrderItem(id, nameAcs, price,quantity, productId, nameAcs, total);
+        OrderItem orderItem = new OrderItem(idAcs, price, quantity, orderId, namePrt, total);
         productService.updateQuantity(idAcs, quantity);
         return orderItem;
 
@@ -83,7 +84,7 @@ public class OrderView {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    System.out.println("Nhập họ và tên: (vd: Trần Hải Bình)" +"Tên phải viết hoa chữ cái đầu, có dấu");
+                    System.out.println("Nhập họ và tên: (vd: Trần Hải Bình)" + "Tên phải viết hoa chữ cái đầu, có dấu");
                     System.out.print("➽ ");
                     String name = scanner.nextLine();
                     while (!ValidateUtils.isFullNameValid(name)) {
@@ -118,7 +119,6 @@ public class OrderView {
                     orderServices.add(order);
 
 
-                    System.out.println("Tạo đơn hàng thành công!!!");
                     do {
                         System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞      TẠO ĐƠN     ↠↠↠↠↠↠↠↠↠↠↠↠");
                         System.out.println("↡                                                ↟ ");
@@ -133,10 +133,10 @@ public class OrderView {
 
                         switch (option) {
                             case "y":
-                                addOrder();
+                                updateOrderItem();
                                 break;
                             case "q":
-                                OrderViewLaucher.runOrder();
+                                addOrder();
                                 break;
                             case "p":
                                 showPayInfo(orderItem, order);
@@ -164,37 +164,40 @@ public class OrderView {
         }
     }
 
-//    public void updateOrderItem() {
-//        List<OrderItem> orderItems = orderItemService.findAll();
-//        long orderId = System.currentTimeMillis() / 1000;
-//        Scanner input = new Scanner(System.in);
-//        ProductView productView = new ProductView();
-//        productView.showProduct(InputOption.ADD);
-//        System.out.println("Nhập ID sản phẩm");
-//        Long id = Long.parseLong(input.nextLine());
-//        Double price = Double.valueOf(0);
-//        Double total = Double.valueOf(0);
-//        String nameProduct = "";
-//        for (OrderItem dish : orderItems) {
-//            Long tamp = dish.getId();
-//            if (tamp.equals(id)) {
-//                price = dish.getPrice();
-//                nameProduct = dish.getProductName();
-//
-//            }
+    public void updateOrderItem() {
+        List<OrderItem> orderItems = orderItemService.findAll();
+//        List<Product> productList = productService.findAll();
+        ProductView productView = new ProductView();
+        productView.showProduct(InputOption.ADD);
+        long id = System.currentTimeMillis()/1000;
+        System.out.println("Nhập id sản phẩm muốn mua");
+        int orderid = Integer.parseInt(scanner.nextLine());
+        Product product = productService.findById(orderid);
+        int oldQuantity = product.getQuantity();
+        double price = Double.valueOf(0);
+        double total = Double.valueOf(0);
+        String nameProduct = "";
+        price = product.getPrice();
+        nameProduct = product.getName();
+        int quantity = 0;
+//        if (isExistProduct(orderItems, product)) {
+//            System.out.println("Sản phẩm này đã có trong đơn !!! Vui lòng nhập thêm số lượng !");
+//            quantity = Integer.parseInt(scanner.nextLine());
+//        } else {
+//            System.out.println("Nhập số lượng muốn mua: ");
+//            quantity = Integer.parseInt(scanner.nextLine());
 //        }
-//        System.out.println("Nhập số lượng muốn mua: ");
-//        int quantity = Integer.parseInt(input.nextLine());
-//        for (OrderItem dish : orderItems) {
-//            Long tamp = dish.getId();
-//            if (tamp.equals(id)) {
-//                total = dish.getPrice() * quantity;
-//            }
-//        }
-//        OrderItem orderItem = new OrderItem(id, nameProduct, price, id, nameProduct, total);
-//        orderItemService.add(orderItem);
-//        System.out.println("Tạo đơn hàng thành công!");
-//    }
+        System.out.println("Nhập số lượng muốn mua: ");
+        quantity = Integer.parseInt(scanner.nextLine());
+         total = quantity * product.getPrice();
+        int currentQuantity = product.getQuantity() - quantity;
+        product.setQuantity(currentQuantity);
+        OrderItem neworderItem = new OrderItem(id, price, quantity, orderid, nameProduct, total);
+        productService.updateQuantity(id, quantity);
+        orderItemService.add(neworderItem);
+        System.out.println("Tạo đơn hàng thành công!!!");
+
+    }
 
 
     public void showPayInfo(OrderItem orderItem, Order order) {
@@ -210,7 +213,7 @@ public class OrderView {
                     orderItem.getQuantity(),
                     AppUtils.doubleToVND(orderItem.getPrice())
             );
-            System.out.println("\nTổng tiền cần thanh toán là: " + AppUtils.doubleToVND(orderItem.getTotalMoney()));
+            System.out.println("\nTổng tiền cần thanh toán là: " + AppUtils.doubleToVND(orderItem.getTotal()));
             System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
             boolean is = true;
             do {
@@ -266,9 +269,9 @@ public class OrderView {
                         newOrderItem.getProductName(),
                         newOrderItem.getQuantity(),
                         AppUtils.doubleToVND(newOrderItem.getPrice()),
-                        AppUtils.doubleToVND(newOrderItem.getTotalMoney())
+                        AppUtils.doubleToVND(newOrderItem.getTotal())
                 );
-                totalMoney += newOrderItem.getTotalMoney();
+                totalMoney += newOrderItem.getTotal();
             }
             System.out.println("");
             System.out.println("Tổng doanh thu: " + totalMoney + " đ");
@@ -293,6 +296,7 @@ public class OrderView {
             System.out.println("Nhập sai!!! Vui lòng nhập lại");
         }
     }
+
 
     public boolean checkQuantity(Product product, int quantity) {
         if (quantity <= product.getQuantity())

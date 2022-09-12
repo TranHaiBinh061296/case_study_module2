@@ -60,7 +60,7 @@ public class AppUtils {
         return result;
     }
 
-    public static String doubleToVND(double value) {
+    public static String doubleToVND(Double value) {
         String patternVND = ",###đ";
         DecimalFormat decimalFormat = new DecimalFormat(patternVND);
         return decimalFormat.format(value);
