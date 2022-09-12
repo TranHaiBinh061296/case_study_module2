@@ -10,11 +10,20 @@ public interface IUserService {
 
     void addUser(User newUser);
 
+//    void add(User newUser);
+
     void update(User newUser);
     boolean existById(int id);
     boolean existByEmail(String email);
     boolean existByPhone(String phone);
     boolean existByUserName(String userName);
+
+    boolean existsByEmail(String email);
+
+    boolean existsByPhone(String phone);
+
+    boolean existsByUsername(String userName);
+
     User findById(int id);
     void deleteById(int id);
 }

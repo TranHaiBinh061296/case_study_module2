@@ -34,11 +34,11 @@ public class ProductViewLauncher {
                         break;
                     case 7:
                         break;
-                    case 0:
+                    case 8:
                         System.exit(0);
                         break;
                     default:
-                        System.out.println("Nhập sai ⚔️ vui lòng nhập lại!");
+                        System.out.println("Nhập sai ⚔️ Vui lòng nhập lại!");
                 }
             }while (!flag);
         }catch (Exception e) {

@@ -1,35 +1,62 @@
 package vn.thbinh.furniture.view;
 
+import vn.thbinh.furniture.model.Role;
+import vn.thbinh.furniture.model.User;
 import vn.thbinh.furniture.service.IUserService;
 import vn.thbinh.furniture.service.UserService;
 import vn.thbinh.furniture.utils.AppUtils;
 
+import java.util.List;
 import java.util.Scanner;
 
-public class AdninView {
+public class AdminView {
     private final IUserService userService;
     private final Scanner scanner = new Scanner(System.in);
 
-    public AdninView() {
+    public AdminView() {
         userService = UserService.getInstance();
     }
 
+
+
+
+
     public void adminLogin() {
-        boolean isRetry;
+        boolean isRetry = false;
         System.out.println("✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠   ĐĂNG NHẬP HỆ THỐNG  ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ");
         do {
-            System.out.println("Username");
+            System.out.println("Username: ");
+            System.out.print("➣");
             String username = AppUtils.retrySring("Username");
-            System.out.println("Mật khẩu");
+            System.out.println("Mật khẩu: ");
+            System.out.print("➣");
             String password = AppUtils.retrySring("Mật khẩu");
-            if (userService.adminLogin(username, password) == null) {
+            User user = userService.adminLogin(username, password);
+            if (user == null) {
                 System.out.println("Tài khoản không hợp lệ!");
                 isRetry = isRetry();
-            }else {
-                System.out.println("Đăng nhập thành công!\n");
-                isRetry = false;
+            }else if (user.getRole() == Role.ADMIN) {
+                System.out.println("Đăng nhập thành công♥♥♥");
+//                MainLauncher.mainMenu();
+            } else if (user.getRole() == Role.USER) {
+                System.out.println("Đăng nhập thành công♥♥♥");
+                MenuUser.menuOderUser();
             }
         }while (isRetry);
+    }
+    public Role set(String username, String password) {
+        List<User> users = userService.findAll();
+        for (User user: users) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)
+            && user.getRole().equals(Role.ADMIN)) {
+                return Role.ADMIN;
+            }
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)
+            && user.getRole().equals(Role.USER)) {
+                return Role.USER;
+            }
+        }
+        return null;
     }
 
     private boolean isRetry() {
@@ -37,7 +64,7 @@ public class AdninView {
             try {
                 System.out.println("Nhấn 'y' để đăng nhập lại! || Nhấn 't' để thoát chương trình");
                 System.out.print("➠");
-                String option = scanner.nextLine();
+                String option = scanner.nextLine().toLowerCase();
                 switch (option) {
                     case "y":
                         return true;

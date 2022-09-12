@@ -5,7 +5,6 @@ import vn.thbinh.furniture.service.ProductService;
 import vn.thbinh.furniture.utils.AppUtils;
 import vn.thbinh.furniture.utils.CSVUtils;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -269,7 +268,7 @@ public class ProductView {
             System.out.println("Đã xóa sản phẩm thành công!");
             AppUtils.isRetry(InputOption.DELETE);
         } else if (option == 2) {
-//            ProductViewLauncher.runProduct();
+            ProductViewLauncher.runProduct();
         }
     }
 }

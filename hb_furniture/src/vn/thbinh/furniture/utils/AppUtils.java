@@ -53,8 +53,7 @@ public class AppUtils {
     }
     public static String retrySring(String fieldName) {
         String result;
-        System.out.print("⭆ ");
-        while ((result= scanner.nextLine().toLowerCase()).isEmpty()) {
+        while ((result= scanner.nextLine()).isEmpty()) {
             System.out.printf("%s không được để trống\n", fieldName);
             System.out.print("⭆ ");
         }
@@ -101,6 +100,6 @@ public class AppUtils {
         }while (true);
     }
     public static void exit() {
-        System.out.println("\t Tạm biệt. Hẹn gặp lại \uD83D\uDC4B!");
+        System.out.println("\t Cảm ơn quý khách. Hẹn gặp lại \uD83D\uDC4B!");
     }
 }
