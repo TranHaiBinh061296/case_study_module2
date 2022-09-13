@@ -40,6 +40,24 @@ public class UserView {
         } while (AppUtils.isRetry(InputOption.ADD));
     }
 
+    public void addUsers() {
+        try {
+            long id = System.currentTimeMillis() / 1000;
+            String username = inputUserName();
+            String password = inputPassword();
+            String fullName = inputFullName(InputOption.ADD);
+            String phone = inputPhone(InputOption.ADD);
+            String address = inputAddress(InputOption.ADD);
+            String email = inputEmail(InputOption.ADD);
+            User user = new User(id, username, password, fullName, phone, email, address, Role.USER);
+            userService.addUser(user);
+            System.out.println("Đăng ký thành công!");
+        } catch (Exception e) {
+            System.out.println("Nhập sai. Vui lòng nhập lại!111");
+        }
+        UserViewLauncher.login();
+    }
+
     public void setRole(User user) {
         System.out.println("= =  SET ROLE = =");
         System.out.println("=    1. USER    =");
@@ -61,8 +79,9 @@ public class UserView {
                 setRole(user);
         }
     }
+
     public void showUsers(InputOption inputOption) {
-        System.out.println("------------------------------------------------------------- DANH SÁCH NGƯỜI DÙNG ----------------------------------------------------------------");
+        System.out.println("⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚ DANH SÁCH NGƯỜI DÙNG ⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚");
         System.out.printf("%-15s %-22s %-15s %-22s %-18s %-15s %-20s %-20s\n", "Id", "Tên", "Số điện thoại", "Email", "Địa chỉ", "Người dùng", "Ngày tạo", "Ngày cập nhật");
         List<User> users = userService.findAll();
         for (User user : users) {
@@ -77,7 +96,7 @@ public class UserView {
                     user.getUpdateAt() == null ? "" : InstantUtils.instantToString(user.getUpdateAt())
             );
         }
-        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚");
         if (inputOption == InputOption.SHOW)
             AppUtils.isRetry(InputOption.SHOW);
     }
@@ -96,7 +115,7 @@ public class UserView {
                 System.out.println("⇆          5. Quay lại             ⇆");
                 System.out.println("⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆");
 
-                int option = AppUtils.retryChoose(1,4);
+                int option = AppUtils.retryChoose(1, 5);
                 User newUser = new User();
                 newUser.setId(id);
                 switch (option) {
@@ -118,15 +137,22 @@ public class UserView {
                         userService.update(newUser);
                         System.out.println("Đổi địa chỉ thành công!");
                         break;
+                    case 4:
+                        String email = inputEmail(InputOption.UPDATE);
+                        newUser.setEmail(email);
+                        userService.update(newUser);
+                        System.out.println("Đổi email thành công!");
+                        break;
                 }
-                isRetry =option != 4 && AppUtils.isRetry(InputOption.UPDATE);
-            }catch (Exception e) {
+                isRetry = option != 5 && AppUtils.isRetry(InputOption.UPDATE);
+            } catch (Exception e) {
                 System.out.println("Nhập sai ! ");
             }
-        }while (isRetry);
+        } while (isRetry);
     }
 
-    public void  deleteUser() {
+    public void deleteUser() {
+        List<User> users = userService.findAll();
         showUsers(InputOption.DELETE);
         int id;
         while (!userService.existById(id = inputId(InputOption.DELETE))) {
@@ -136,8 +162,10 @@ public class UserView {
             String option = scanner.nextLine().toLowerCase();
             switch (option) {
                 case "y":
+                    deleteUser();
                     break;
                 case "q":
+                    MainLauncher.menuUser();
                     return;
                 case "t":
                     AppUtils.exit();
@@ -146,12 +174,22 @@ public class UserView {
                     System.out.println("Nhập chức năng không đúng! Vui lòng nhập lại!");
                     break;
             }
-            System.out.println("≧❂◡❂≦≧❂◡❂≦    XÁC NHẬN XÓA    ≧❂◡❂≦≧❂◡❂≦");
-            System.out.println("¿             1. Nhấn 1 để xóa              ¿");
-            System.out.println("¿             2. Nhấn 2 để quay lại         ¿");
-            System.out.println("≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦");
+        }
+        System.out.println("≧❂◡❂≦≧❂◡❂≦    XÁC NHẬN XÓA    ≧❂◡❂≦≧❂◡❂≦");
+        System.out.println("¿             1. Nhấn 1 để xóa               ¿");
+        System.out.println("¿             2. Nhấn 2 để quay lại          ¿");
+        System.out.println("≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦≧❂◡❂≦");
+        int option = AppUtils.retryChoose(1, 2);
+        if (option == 1) {
+            userService.deleteById(id);
+            System.out.println("Đã xóa user thành công!");
+            showUsers(InputOption.DELETE);
+            AppUtils.isRetry(InputOption.DELETE);
+        } else if (option == 2) {
+            UserViewLauncher.lauch();
         }
     }
+
     private int inputId(InputOption option) {
         int id;
         switch (option) {
@@ -219,7 +257,7 @@ public class UserView {
         System.out.print("➠");
         String fullName;
         while (!ValidateUtils.isFullNameValid(fullName = scanner.nextLine())) {
-            System.out.println("Tên " + fullName + " không đúng định dạng." + " Viết hoa chữ cái đầu và có dấu");
+            System.out.println("Tên " + fullName + " không đúng định dạng." + " Viết hoa chữ cái đầu");
             System.out.println("Nhập tên (vd: Trần Hải Bình) ");
             System.out.println("➠");
         }
@@ -255,7 +293,7 @@ public class UserView {
         return phone;
     }
 
-//    private String inputEmail() {
+    //    private String inputEmail() {
 //        System.out.println("Nhập email (vd: haibinh@gmail.com)");
 //        System.out.print("➠");
 //        String email;
@@ -288,7 +326,8 @@ public class UserView {
         String email;
         do {
             if (!ValidateUtils.isEmailValid(email = scanner.nextLine())) {
-                System.out.println("Email " + email + " không đúng định dạng Vui lòng nhập lại !");
+                System.out.println("Email " + email + " không đúng định dạng Vui lòng nhập lại !" + "");
+                System.out.println("Nhập email (vd: haibinh@gmail.com)");
                 System.out.print("➠");
                 continue;
             }
@@ -304,7 +343,7 @@ public class UserView {
     }
 
     private String inputPassword() {
-        System.out.println("Nhập mật khẩu (từ 8 đến 20 ký tự)");
+        System.out.println("Nhập mật khẩu (từ 8 đến 20 ký tự), có ký hiệu đặc biệt. Viết hoa chữ cái đầu");
         System.out.print("➠");
         String password;
         while (!ValidateUtils.isPasswordValid(password = scanner.nextLine())) {
@@ -330,7 +369,7 @@ public class UserView {
                 } while (address.trim().isEmpty());
                 return address;
             case UPDATE:
-                System.out.println("Nhập địa chỉ muốn đổi (vd: Huế");
+                System.out.println("Nhập địa chỉ muốn đổi (vd: Huế)");
                 do {
                     address = scanner.nextLine();
                     if (address.trim().isEmpty()) {

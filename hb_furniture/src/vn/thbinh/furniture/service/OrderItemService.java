@@ -75,13 +75,17 @@ public class OrderItemService implements IOrderItemService {
         return list;
     }
 
-    public void updateStatusOrderItem(String name) {
+
+@Override
+    public List<OrderItem> findByOrderId(long orderId) {
         List<OrderItem> orderItems = findAll();
-        for (OrderItem orderItem: orderItems) {
-            if (orderItem.getName().equals(name))
-                orderItem.setStatus("Đã thanh toán");
+        List<OrderItem> orderItemsFind = new ArrayList<>();
+        for (OrderItem orderItem : orderItems) {
+            if (orderItem.getOrderId() == orderId) {
+                orderItemsFind.add(orderItem);
+            }
         }
-        CSVUtils.writeFile(path, orderItems);
+        return orderItemsFind;
     }
 
 }

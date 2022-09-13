@@ -15,7 +15,6 @@ public class User {
     private Role role;
     private Instant createAt;
     private Instant updateAt;
-//    List<Order> orders = new ArrayList<>();
 
     public User() {
     }

@@ -9,7 +9,6 @@ public class OrderItem {
     private int productId;
     private String productName;
     private double total;
-    private String status;
 
     public OrderItem() {
     }
@@ -23,7 +22,6 @@ public class OrderItem {
         this.productId = productId;
         this.productName = productName;
         this.total = total;
-        this.status = "Chưa thanh toán";
     }
 
     public OrderItem(String record) {
@@ -36,13 +34,12 @@ public class OrderItem {
         productId = Integer.parseInt(fields[5]);
         productName = fields[6];
         total = Double.parseDouble(fields[7]);
-        status = fields[8];
     }
 
 
 
-    public OrderItem(long idAcs, double price, int quantity, long orderId, String namePrt, double total) {
-        this.id =idAcs;
+    public OrderItem(long idPrt, double price, int quantity, long orderId, String namePrt, double total) {
+        this.id =idPrt;
         this.price = price;
         this.quantity = quantity;
         this.orderId = orderId;
@@ -120,13 +117,6 @@ public class OrderItem {
         this.total = total;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     @Override
     public String toString() {
@@ -137,7 +127,6 @@ public class OrderItem {
                 "," + orderId +
                 "," + productId +
                 "," + productName +
-                "," + total +
-                "," + status;
+                "," + total;
     }
 }

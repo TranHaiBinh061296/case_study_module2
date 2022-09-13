@@ -11,7 +11,7 @@ public interface IProductService {
     void add(Product newProduct);
     void update(Product newProduct);
     void remove(long id);
-    boolean exitsts(int id);
-    Product findById(int id);
+    boolean exitsts(long id);
+    Product findById(long id);
     void updateQuantity(long id, int quantity);
 }

@@ -22,17 +22,20 @@ public class ProductViewLauncher {
                         productView.update();
                         break;
                     case 3:
+                        SearchProductView.search();
                         break;
                     case 4:
                         productView.showProduct(InputOption.SHOW);
                         runProduct();
                         break;
                     case 5:
+                        SortProductView.choice();
                         break;
                     case 6:
                         productView.remove();
                         break;
                     case 7:
+                        MainLauncher.mainMenu();
                         break;
                     case 8:
                         System.exit(0);

@@ -85,12 +85,14 @@ public class ProductView {
             Product product = new Product((int) id, nameProduct, price, quantity);
             productService.add(product);
             System.out.println("Sản phẩm đã được thêm thành công!❀");
+            showProduct(InputOption.ADD);
         } while (AppUtils.isRetry(InputOption.ADD));
     }
 
     public void update() {
         show(productService.findAll());
-        System.out.print("Nhập ID cần sửa \n➱ \t");
+        System.out.println("Nhập ID cần sửa :");
+        System.out.print("➤ ");
         try {
             int id = Integer.parseInt(scanner.nextLine());
             if (productService.exitsts(id)) {
@@ -107,7 +109,7 @@ public class ProductView {
                                 inputQuantity(id);
                                 break;
                             case 3:
-//                                ProductViewLauncher.runProduct();
+                                ProductViewLauncher.runProduct();
                                 break;
                             default:
                                 System.out.println("Chưa hợp lệ! Vui lòng nhập lại !");
@@ -127,7 +129,7 @@ public class ProductView {
                             update();
                             break;
                         case "b":
-//                            ProductViewLauncher.runProduct();
+                            ProductViewLauncher.runProduct();
                             break;
                         case "e":
                             System.exit(0);
@@ -157,54 +159,59 @@ public class ProductView {
     }
 
     public void show(List<Product> productList) {
-        System.out.println("------------------------- DANH SÁCH SẢN PHẨM NỘI THẤT ------------------------------------");
-        System.out.printf("%-15s| %-20s| %-20s| %-10s|", "ID", "Tên ", "Giá", "Số lượng");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+        System.out.printf("%-25s▎ %-25s| %-15s| %-18s|", "ID", "Tên ", "Giá", "Số lượng");
         System.out.println("");
-        System.out.println("------------------------------------------------------------------------------------------");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
         for (Product product : productList) {
-            System.out.printf("%-15s| %-20s| %-20s| %-10s|\n",
+            System.out.printf("%-25s| %-25s| %-15s| %-13s     |\n",
                     product.getProductID(),
                     product.getName(),
                     decimalFormat.format(product.getPrice()),
                     product.getQuantity());
         }
         System.out.println("");
-        System.out.println("-------------------------------------------------------------------------------------------\n");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨\n");
     }
 
 
     public void showProduct(InputOption option) {
         List<Product> productList = productService.findAll();
-        System.out.println("------------------------- DANH SÁCH SẢN PHẨM NỘI THẤT ------------------------------------");
-        System.out.println("");
-        System.out.printf("%-15s %-20s %-20s %-10s", "ID", "Tên ", "Giá", "Số lượng");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+        System.out.println("▨                               HB FURNITURE                                             ▨");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+        System.out.printf("%-25s %-25s %-15s %17s", "ID", "Tên ", "Giá", "Số lượng");
         System.out.println("");
         for (Product product : productList) {
-            System.out.printf("%-15s %-20s %-20s %-10s\n",
+            System.out.printf("%-25s %-25s %-15s %13s\n",
                     product.getProductID(),
                     product.getName(),
                     decimalFormat.format(product.getPrice()),
                     product.getQuantity());
         }
         System.out.println("");
-        System.out.println("-------------------------------------------------------------------------------------------\n");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨\n");
     }
 
     public void inputPrice(int id) {
         Product product = productService.getProductByID(id);
-        System.out.print("Nhập giá:  ➱ \t");
+        System.out.print("Nhập giá: ");
+        System.out.print("➤ ");
         double price = Double.parseDouble(scanner.nextLine());
         product.setPrice(price);
         productService.update(product);
+        showProduct(InputOption.UPDATE);
         System.out.println("Cập nhật thành công ! ");
     }
 
     public void inputQuantity(int id) {
         Product product = productService.getProductByID(id);
-        System.out.print("Nhập số lượng: \n ➱ \t");
+        System.out.print("Nhập số lượng: ");
+        System.out.print("➤ ");
         int quartity = Integer.parseInt(scanner.nextLine());
         product.setQuantity(quartity);
         productService.update(product);
+        showProduct(InputOption.UPDATE);
         System.out.println("Cập nhật thành công !");
     }
 
@@ -248,8 +255,10 @@ public class ProductView {
             switch (option) {
                 case 1:
                     remove();
+                    MainLauncher.menuProduct();
                     break;
                 case 2:
+                    MainLauncher.menuProduct();
                     return;
                 case 0:
                     System.exit(0);
@@ -266,6 +275,7 @@ public class ProductView {
         if (option == 1) {
             productService.remove(id);
             System.out.println("Đã xóa sản phẩm thành công!");
+            showProduct(InputOption.DELETE);
             AppUtils.isRetry(InputOption.DELETE);
         } else if (option == 2) {
             ProductViewLauncher.runProduct();

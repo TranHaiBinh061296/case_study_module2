@@ -100,16 +100,32 @@ public class UserService implements IUserService {
 
     @Override
     public boolean existByEmail(String email) {
+        List<User> users = findAll();
+        for (User user : users) {
+            if (user.getEmail().equals(email))
+                return true;
+        }
         return false;
     }
 
     @Override
     public boolean existByPhone(String phone) {
+        List<User> users = findAll();
+        for (User user : users) {
+            if (user.getMobile().equals(phone))
+                return true;
+        }
         return false;
     }
 
     @Override
     public boolean existByUserName(String userName) {
+
+        List<User> users = findAll();
+        for (User user : users) {
+            if (user.getUsername().equals(userName))
+                return true;
+        }
         return false;
     }
 

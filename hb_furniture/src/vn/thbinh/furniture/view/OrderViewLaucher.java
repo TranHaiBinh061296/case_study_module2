@@ -2,7 +2,6 @@ package vn.thbinh.furniture.view;
 
 import java.util.Scanner;
 
-import static vn.thbinh.furniture.view.MainLauncher.mainMenu;
 import static vn.thbinh.furniture.view.MainLauncher.menuOrder;
 
 public class OrderViewLaucher {
@@ -25,7 +24,7 @@ public class OrderViewLaucher {
                         orderView.showTurnover();
                         break;
                     case 3:
-                        mainMenu();
+                        MainLauncher.mainMenu();
                         break;
                     case 0:
                         System.exit(0);

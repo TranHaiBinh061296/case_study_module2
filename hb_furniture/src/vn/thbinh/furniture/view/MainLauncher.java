@@ -7,12 +7,10 @@ public class MainLauncher {
     static Scanner scanner = new Scanner(System.in);
 
     public MainLauncher() {
-        startMainMenu();
+        launch();
     }
     public static void launch() {
-        AdminView adminView = new AdminView();
-        adminView.adminLogin();
-        menuOption();
+       UserViewLauncher.login();
     }
 
 
@@ -31,6 +29,7 @@ public class MainLauncher {
                         ProductViewLauncher.runProduct();
                         break;
                     case 3:
+                        OrderViewLaucher.runOrder();
                         break;
                     case 4:
                         System.exit(0);
@@ -62,9 +61,9 @@ public class MainLauncher {
     }
 
     public static void menuUser() {
-        System.out.println("웃▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬웃");
-        System.out.println("웃                   QUẢN LÝ NGƯỜI DÙNG             웃");
-        System.out.println("웃▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬웃");
+        System.out.println("웃▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬웃");
+        System.out.println("웃                   QUẢN LÝ NGƯỜI DÙNG               웃");
+        System.out.println("웃▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬웃");
         System.out.println("웃▋✉                                               ✆▋웃");
         System.out.println("웃▋               1.Thêm người dùng                  ▋웃");
         System.out.println("웃▋               2.Sửa thông tin người dùng         ▋웃");
@@ -73,7 +72,7 @@ public class MainLauncher {
         System.out.println("웃▋               5.Quay lại MAIN MENU               ▋웃");
         System.out.println("웃▋               6.Thoát chương trình               ▋웃");
         System.out.println("웃▋☎                                               ✍▋웃");
-        System.out.println("웃▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬웃");
+        System.out.println("웃▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬웃");
     }
     public static void menuProduct() {
         System.out.println("�◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘�");
@@ -138,4 +137,5 @@ public class MainLauncher {
         System.out.println("✬დ                                                  დ✬");
         System.out.println("✬⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿✬");
     }
+
 }

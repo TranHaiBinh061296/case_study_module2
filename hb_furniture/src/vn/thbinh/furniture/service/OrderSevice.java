@@ -86,4 +86,23 @@ public class OrderSevice implements IOrderServices {
         orders.remove(order);
         CSVUtils.writeFile(path, orders);
     }
+
+    @Override
+    public boolean existsByPhone(String phone) {
+        List<Order> orders = findAll();
+        for (Order order : orders) {
+            if (order.getPhone().equals(phone))
+                return true;
+        }
+        return false;
+    }
+    @Override
+    public Order findById(long orderId){
+        List<Order> orders = findAll();
+        for (Order order : orders) {
+            if (order.getId() == orderId)
+                return order;
+        }
+        return null;
+    }
 }

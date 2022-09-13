@@ -14,5 +14,7 @@ public interface IOrderServices {
     boolean checkForDuplicateName(String name);
     boolean checkForDuplicateId(int id);
     void remove(Order order);
+    boolean existsByPhone(String phone);
 
+    Order findById(long orderId);
 }

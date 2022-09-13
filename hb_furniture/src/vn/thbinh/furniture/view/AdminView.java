@@ -18,14 +18,11 @@ public class AdminView {
     }
 
 
-
-
-
     public void adminLogin() {
         boolean isRetry = false;
         System.out.println("✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠   ĐĂNG NHẬP HỆ THỐNG  ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ");
         do {
-            System.out.println("Username: ");
+            System.out.println("Tên tài khoản: ");
             System.out.print("➣");
             String username = AppUtils.retrySring("Username");
             System.out.println("Mật khẩu: ");
@@ -35,24 +32,26 @@ public class AdminView {
             if (user == null) {
                 System.out.println("Tài khoản không hợp lệ!");
                 isRetry = isRetry();
-            }else if (user.getRole() == Role.ADMIN) {
+            } else if (user.getRole() == Role.ADMIN) {
                 System.out.println("Đăng nhập thành công♥♥♥");
-//                MainLauncher.mainMenu();
+                MainLauncher.menuOption();
             } else if (user.getRole() == Role.USER) {
                 System.out.println("Đăng nhập thành công♥♥♥");
-                MenuUser.menuOderUser();
+                MenuUser.runOderUser();
             }
-        }while (isRetry);
+        } while (isRetry);
     }
+
+
     public Role set(String username, String password) {
         List<User> users = userService.findAll();
-        for (User user: users) {
+        for (User user : users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)
-            && user.getRole().equals(Role.ADMIN)) {
+                    && user.getRole().equals(Role.ADMIN)) {
                 return Role.ADMIN;
             }
             if (user.getUsername().equals(username) && user.getPassword().equals(password)
-            && user.getRole().equals(Role.USER)) {
+                    && user.getRole().equals(Role.USER)) {
                 return Role.USER;
             }
         }
@@ -74,11 +73,11 @@ public class AdminView {
                         System.out.println("Nhập chức năng không đúng! Vui lòng nhập lại!");
                         break;
                 }
-            }catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("Nhập sai! Vui lòng nhập lại!");
                 e.printStackTrace();
             }
-        }while (true);
+        } while (true);
     }
 
 }

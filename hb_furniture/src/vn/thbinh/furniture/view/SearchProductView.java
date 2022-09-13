@@ -55,8 +55,7 @@ public class SearchProductView {
         System.out.println("Nhập id cần tìm kiếm: ");
         try {
             int id = Integer.parseInt(scanner.nextLine());
-            System.out.println("Sản phẩm có id " + id + " là: ");
-            System.out.printf("%-10s %-30s %-18s %-10s", "Id", "Tên Sản Phẩm", "Giá", "Số lượng\n");
+            System.out.printf("%-15s %-30s %-18s %-10s", "Id", "Tên Sản Phẩm", "Giá", "Số lượng\n");
             for (Product product : products) {
                 if (product.getProductID() == id) {
                     count++;
@@ -76,6 +75,7 @@ public class SearchProductView {
         System.out.println();
         do {
             System.out.print("Nhấn 'q' để quay lại.");
+            System.out.print("➤ ");
             try {
                 choice = scanner.nextLine().charAt(0);
             } catch (Exception e) {

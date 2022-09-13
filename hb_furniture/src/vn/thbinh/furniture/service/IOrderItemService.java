@@ -11,4 +11,6 @@ public interface IOrderItemService {
     void update(OrderItem newOrderItem);
 
     OrderItem getOrderItemById(int id);
+
+    List<OrderItem> findByOrderId(long orderId);
 }

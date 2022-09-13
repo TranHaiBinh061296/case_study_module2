@@ -101,5 +101,6 @@ public class AppUtils {
     }
     public static void exit() {
         System.out.println("\t Cảm ơn quý khách. Hẹn gặp lại \uD83D\uDC4B!");
+        System.exit(0);
     }
 }

@@ -78,12 +78,12 @@ public class ProductService implements IProductService{
     }
 
     @Override
-    public boolean exitsts(int id) {
-        return getProductByID(id) != null;
+    public boolean exitsts(long id) {
+        return getProductByID((int) id) != null;
     }
 
     @Override
-    public Product findById(int id) {
+    public Product findById(long id) {
         List<Product> products = findAll();
         for (Product product:products) {
             if (id == product.getProductID()) {
