@@ -132,11 +132,10 @@ public class OrderView {
                         showPay(orderItem);
                         break;
                     case "t":
-                        System.exit(0);
+                        UserViewLauncher.login();
                         break;
                     default:
                         System.out.println("Nhập sai vui lòng nhập lại!!!!");
-                        break;
                 }
             } while (true);
         } catch (Exception e) {
@@ -286,7 +285,7 @@ public class OrderView {
             boolean is = true;
             do {
                 System.out.println("Nhập 'q' để trở lại ||  Nhập 't' để thoát chương trình");
-                System.out.print("➤ ");
+                System.out.print(" ⭆ ");
                 String choice = scanner.nextLine();
                 switch (choice) {
                     case "q":
@@ -300,6 +299,7 @@ public class OrderView {
                         is = false;
                 }
             } while (!is);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -343,7 +343,7 @@ public class OrderView {
         OrderItem newOrderItem = new OrderItem();
         double totalMoney = 0;
         try {
-            System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ Doanh Thu ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+            System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ Doanh Thu ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
             System.out.println("                                                                                                                                      ");
             System.out.printf("%-15s %-20s %-25s %-15s %-30s %-15s %-15s %-15s \n",
                     "   Id",
@@ -375,7 +375,7 @@ public class OrderView {
             }
             System.out.println("");
             System.out.println("Tổng doanh thu: " + AppUtils.doubleToVND(totalMoney) );
-            System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+            System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
             boolean is = true;
             do {
                 System.out.println("Nhập 'q' để trở lại || Nhập 'e' để thoát chương trình");

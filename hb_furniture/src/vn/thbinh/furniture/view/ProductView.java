@@ -162,7 +162,7 @@ public class ProductView {
         System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
         System.out.printf("%-25s▎ %-25s| %-15s| %-18s|", "ID", "Tên ", "Giá", "Số lượng");
         System.out.println("");
-        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
         for (Product product : productList) {
             System.out.printf("%-25s| %-25s| %-15s| %-13s     |\n",
                     product.getProductID(),
@@ -177,9 +177,9 @@ public class ProductView {
 
     public void showProduct(InputOption option) {
         List<Product> productList = productService.findAll();
-        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
-        System.out.println("▨                               HB FURNITURE                                             ▨");
-        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+        System.out.println("▨                               HB FURNITURE                                               ▨");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
         System.out.printf("%-25s %-25s %-15s %17s", "ID", "Tên ", "Giá", "Số lượng");
         System.out.println("");
         for (Product product : productList) {
@@ -190,7 +190,7 @@ public class ProductView {
                     product.getQuantity());
         }
         System.out.println("");
-        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨\n");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨\n");
     }
 
     public void inputPrice(int id) {

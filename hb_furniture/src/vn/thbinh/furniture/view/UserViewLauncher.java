@@ -39,7 +39,7 @@ public class UserViewLauncher {
                         MainLauncher.menuOption();
                         break;
                     case 6:
-                        System.exit(6);
+                        UserViewLauncher.login();
                         break;
                     default:
                         System.out.println("Chọn chức năng không đúng !!!");

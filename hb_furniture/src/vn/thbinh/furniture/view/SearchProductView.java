@@ -24,6 +24,7 @@ public class SearchProductView {
             System.out.println("Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ");
             System.out.println("⚅                                             ⚅");
             System.out.println("⚅         1. Tìm kiếm theo id sản phẩm        ⚅");
+            System.out.println("⚅         2. Tìm kiếm theo tên sản phẩm        ⚅");
             System.out.println("⚅         0. Quay lại                         ⚅");
             System.out.println("⚅                                             ⚅");
             System.out.println("Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ");
@@ -37,6 +38,9 @@ public class SearchProductView {
             switch (choice) {
                 case 1:
                     searchById();
+                    break;
+                case 2:
+                    searchByName();
                     break;
                 case 0:
                     ProductViewLauncher.runProduct();
@@ -69,12 +73,32 @@ public class SearchProductView {
             System.out.println("Chưa hợp lệ!Mời nhập lại");
         }
     }
+    public static void searchByName() {
+        List<Product> products = productService.findAll();
+        int count = 0;
+        System.out.println("Nhập tên cần tìm kiếm: ");
+        try {
+            String name = scanner.nextLine();
+            System.out.printf("%-20s %-30s %-18s %-10s", "Id", "Tên Sản Phẩm", "Giá", "Số lượng\n");
+            for (Product product : products) {
+                if (product.getName().toLowerCase().contains(name.toLowerCase())) {
+                    count++;
+                    System.out.printf("%-20s %-30s %-18s %-10s\n", product.getProductID(), product.getName(), format.format(product.getPrice()),
+                            product.getQuantity());
+                }
+            }
+            showReturnSearch(count);
+
+        } catch (Exception e) {
+            System.out.println("Chưa hợp lệ!Mời nhập lại");
+        }
+    }
     public static void showReturnSearch(int count) {
         char choice = ' ';
         boolean isChoice;
         System.out.println();
         do {
-            System.out.print("Nhấn 'q' để quay lại.");
+            System.out.println("Nhấn 'q' để quay lại.");
             System.out.print("➤ ");
             try {
                 choice = scanner.nextLine().charAt(0);

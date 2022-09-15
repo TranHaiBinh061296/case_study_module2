@@ -26,8 +26,8 @@ public class OrderViewLaucher {
                     case 3:
                         MainLauncher.mainMenu();
                         break;
-                    case 0:
-                        System.exit(0);
+                    case 4:
+                        UserViewLauncher.login();
                         break;
                     default:
                         System.out.println("Nhập sai vui lòng nhập lại!");

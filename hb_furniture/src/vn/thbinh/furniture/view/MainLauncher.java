@@ -32,7 +32,7 @@ public class MainLauncher {
                         OrderViewLaucher.runOrder();
                         break;
                     case 4:
-                        System.exit(0);
+                        UserViewLauncher.login();
                         break;
                     default:
                         System.out.println("Nhập sai ⚔️Vui lòng nhập lại! ");
@@ -55,7 +55,7 @@ public class MainLauncher {
         System.out.println("❐                1.Quản lý người dùng               ❐");
         System.out.println("❐                2.Quản lý hàng hóa                 ❐");
         System.out.println("❐                3.Quản lý đơn đặt hàng             ❐");
-        System.out.println("❐                4.Thoát chương trình               ❐");
+        System.out.println("❐                4.Đăng xuất                        ❐");
         System.out.println("❐                                                   ❐");
         System.out.println("❐◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈❐");
     }
@@ -70,7 +70,7 @@ public class MainLauncher {
         System.out.println("웃▋               3.Xóa người dùng                   ▋웃");
         System.out.println("웃▋               4.Hiện thông tin người dùng        ▋웃");
         System.out.println("웃▋               5.Quay lại MAIN MENU               ▋웃");
-        System.out.println("웃▋               6.Thoát chương trình               ▋웃");
+        System.out.println("웃▋               6.Đăng xuất                        ▋웃");
         System.out.println("웃▋☎                                               ✍▋웃");
         System.out.println("웃▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬웃");
     }
@@ -86,7 +86,7 @@ public class MainLauncher {
         System.out.println("�               5.Sắp xếp sản phẩm                �");
         System.out.println("�               6.Xóa sản phẩm                    �");
         System.out.println("�               7.Quay lại MAIN MENU              �");
-        System.out.println("�               8.Thoát chương trình              �");
+        System.out.println("�               8.Đăng xuất                       �");
         System.out.println("�❂                                              ❂�");
         System.out.println("�◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘�");
         System.out.println("Chọn chức năng");
@@ -131,9 +131,9 @@ public class MainLauncher {
         System.out.println("✬⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿✬");
         System.out.println("✬დ                                                 დ✬");
         System.out.println("✬                1.Tạo đơn hàng                      ✬");
-        System.out.println("✬                2.Xem danh sách đơn hàng            ✬");
+        System.out.println("✬                2.Xem doanh thu                     ✬");
         System.out.println("✬                3.Quay lại MAIN MENU                ✬");
-        System.out.println("✬                4.Thoát chương trình                ✬");
+        System.out.println("✬                4.Đăng xuất                         ✬");
         System.out.println("✬დ                                                  დ✬");
         System.out.println("✬⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿⦿✬");
     }

@@ -81,7 +81,7 @@ public class UserView {
     }
 
     public void showUsers(InputOption inputOption) {
-        System.out.println("⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚ DANH SÁCH NGƯỜI DÙNG ⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚");
+        System.out.println("⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚ DANH SÁCH NGƯỜI DÙNG ⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚");
         System.out.printf("%-15s %-22s %-15s %-22s %-18s %-15s %-20s %-20s\n", "Id", "Tên", "Số điện thoại", "Email", "Địa chỉ", "Người dùng", "Ngày tạo", "Ngày cập nhật");
         List<User> users = userService.findAll();
         for (User user : users) {
@@ -96,7 +96,7 @@ public class UserView {
                     user.getUpdateAt() == null ? "" : InstantUtils.instantToString(user.getUpdateAt())
             );
         }
-        System.out.println("⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚");
+        System.out.println("⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚⎚");
         if (inputOption == InputOption.SHOW)
             AppUtils.isRetry(InputOption.SHOW);
     }
@@ -113,7 +113,7 @@ public class UserView {
                 System.out.println("⇆          3. Sửa địa chỉ          ⇆");
                 System.out.println("⇆          4. Sửa email            ⇆");
                 System.out.println("⇆          5. Quay lại             ⇆");
-                System.out.println("⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆");
+                System.out.println("⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆⇆");
 
                 int option = AppUtils.retryChoose(1, 5);
                 User newUser = new User();
