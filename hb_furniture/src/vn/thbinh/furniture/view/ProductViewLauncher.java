@@ -35,10 +35,10 @@ public class ProductViewLauncher {
                         productView.remove();
                         break;
                     case 7:
-                        MainLauncher.mainMenu();
+                        MainLauncher.menuOption();
                         break;
                     case 8:
-                        System.exit(0);
+                        UserViewLauncher.login();
                         break;
                     default:
                         System.out.println("Nhập sai ⚔️ Vui lòng nhập lại!");

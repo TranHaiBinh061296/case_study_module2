@@ -24,7 +24,7 @@ public class SearchProductView {
             System.out.println("Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ");
             System.out.println("⚅                                             ⚅");
             System.out.println("⚅         1. Tìm kiếm theo id sản phẩm        ⚅");
-            System.out.println("⚅         2. Tìm kiếm theo tên sản phẩm        ⚅");
+            System.out.println("⚅         2. Tìm kiếm theo tên sản phẩm       ⚅");
             System.out.println("⚅         0. Quay lại                         ⚅");
             System.out.println("⚅                                             ⚅");
             System.out.println("Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ Ƹ̴Ӂ̴Ʒ");

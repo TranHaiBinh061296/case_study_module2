@@ -6,6 +6,7 @@ import vn.thbinh.furniture.service.IUserService;
 import vn.thbinh.furniture.service.UserService;
 import vn.thbinh.furniture.utils.AppUtils;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,7 +21,8 @@ public class AdminView {
 
     public void adminLogin() {
         boolean isRetry = false;
-        System.out.println("✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠   ĐĂNG NHẬP HỆ THỐNG  ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ");
+        System.out.println("✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠   HB FUMITURE  ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ");
+        System.out.println("▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩  Đăng nhập    ▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩");
         do {
             System.out.println("Tên tài khoản: ");
             System.out.print("➣");

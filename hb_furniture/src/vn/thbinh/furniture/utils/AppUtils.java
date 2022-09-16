@@ -55,7 +55,7 @@ public class AppUtils {
         String result;
         while ((result= scanner.nextLine()).isEmpty()) {
             System.out.printf("%s không được để trống\n", fieldName);
-            System.out.print("⭆ ");
+            System.out.print("➠ ");
         }
         return result;
     }

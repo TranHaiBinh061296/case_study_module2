@@ -26,7 +26,7 @@ public class ProductView {
         String nameProduct = "";
         switch (option) {
             case ADD:
-                System.out.println("Nhập sản phẩm nội thất: ");
+                System.out.println("Nhập tên sản phẩm nội thất: ");
                 break;
             case UPDATE:
                 System.out.println("Nhập tên sản phẩm bạn muốn sửa: ");
@@ -69,7 +69,7 @@ public class ProductView {
         double price;
         do {
             price = AppUtils.retryParseDouble();
-            if (price < 0) {
+            if (price <= 0) {
                 System.out.println("Giá phải lớn hơn 0");
             }
         } while (price < 0);
@@ -159,7 +159,7 @@ public class ProductView {
     }
 
     public void show(List<Product> productList) {
-        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
+        System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
         System.out.printf("%-25s▎ %-25s| %-15s| %-18s|", "ID", "Tên ", "Giá", "Số lượng");
         System.out.println("");
         System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
@@ -178,7 +178,7 @@ public class ProductView {
     public void showProduct(InputOption option) {
         List<Product> productList = productService.findAll();
         System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
-        System.out.println("▨                               HB FURNITURE                                               ▨");
+        System.out.println("▨                               HB FURNITURE                                              ▨");
         System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");
         System.out.printf("%-25s %-25s %-15s %17s", "ID", "Tên ", "Giá", "Số lượng");
         System.out.println("");

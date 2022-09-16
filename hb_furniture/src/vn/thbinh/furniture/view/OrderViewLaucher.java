@@ -24,7 +24,7 @@ public class OrderViewLaucher {
                         orderView.showTurnover();
                         break;
                     case 3:
-                        MainLauncher.mainMenu();
+                        MainLauncher.menuOption();
                         break;
                     case 4:
                         UserViewLauncher.login();

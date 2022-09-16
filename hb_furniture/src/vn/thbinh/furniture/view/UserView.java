@@ -257,9 +257,9 @@ public class UserView {
         System.out.print("➠");
         String fullName;
         while (!ValidateUtils.isFullNameValid(fullName = scanner.nextLine())) {
-            System.out.println("Tên " + fullName + " không đúng định dạng." + " Viết hoa chữ cái đầu");
+            System.out.println("Tên " + fullName + " không đúng định dạng." + " Viết hoa chữ cái đầu" + "Không bao gồm số, không thêm ký tự đặc biệt" );
             System.out.println("Nhập tên (vd: Trần Hải Bình) ");
-            System.out.println("➠");
+            System.out.print("➠");
         }
         return fullName;
     }
@@ -343,7 +343,7 @@ public class UserView {
     }
 
     private String inputPassword() {
-        System.out.println("Nhập mật khẩu (từ 8 đến 20 ký tự), có ký hiệu đặc biệt. Viết hoa chữ cái đầu");
+        System.out.println("Nhập mật khẩu (từ 8 đến 20 ký tự), bao gồm số, chữ cái viết hoa, ký tự đặc biệt (:;',?/*~$^+=<> !@#&–_)");
         System.out.print("➠");
         String password;
         while (!ValidateUtils.isPasswordValid(password = scanner.nextLine())) {

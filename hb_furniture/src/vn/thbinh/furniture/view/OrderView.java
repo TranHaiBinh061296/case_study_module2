@@ -259,7 +259,7 @@ public class OrderView {
 
     public void showInfo(Order order) {
         try {
-            System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬     HOÁ ĐƠN BÁN LẺ      ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            System.out.println("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬     HOÁ ĐƠN THANH TOÁN      ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             System.out.println("Mã đơn hàng     :   " +    order.getId());
             System.out.println("Tên khách hàng  :   " + order.getName());
             System.out.println("Số điện thoại   :   " + order.getPhone());
@@ -285,7 +285,7 @@ public class OrderView {
             boolean is = true;
             do {
                 System.out.println("Nhập 'q' để trở lại ||  Nhập 't' để thoát chương trình");
-                System.out.print(" ⭆ ");
+                System.out.print("⭆ ");
                 String choice = scanner.nextLine();
                 switch (choice) {
                     case "q":
