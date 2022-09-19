@@ -109,9 +109,9 @@ public class OrderView {
 
 
             do {
-                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞    TẠO ĐƠN THÀNH CÔNG    ↠↠↠↠↠↠↠↠↠↠↠↠");
-                System.out.println("↡  Nhấn 'y' để tiếp tục mua hàng  ||  Nhấn 'q' để quay lại   ↟");
-                System.out.println("↡  Nhấn 'p' để in hóa đơn         ||  Nhấn 't' để thoát      ↟");
+                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞     TẠO ĐƠN THÀNH CÔNG     ↠↠↠↠↠↠↠↠↠↠↠↠");
+                System.out.println("↡  Nhấn 'y' để tạo đơn hàng mới  ||  Nhấn 'q' để quay lại   ↟");
+                System.out.println("↡  Nhấn 'p' để in hóa đơn        ||  Nhấn 't' để thoát      ↟");
                 System.out.print("➽");
                 String option = scanner.nextLine();
 
@@ -180,9 +180,9 @@ public class OrderView {
 
 
             do {
-                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞    TẠO ĐƠN THÀNH CÔNG    ↠↠↠↠↠↠↠↠↠↠↠↠");
-                System.out.println("↡  Nhấn 'y' để tiếp tục mua hàng  ||  Nhấn 'q' để quay lại   ↟");
-                System.out.println("↡  Nhấn 'p' để in hóa đơn         ||  Nhấn 't' để thoát      ↟");
+                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞     TẠO ĐƠN THÀNH CÔNG     ↠↠↠↠↠↠↠↠↠↠↠↠");
+                System.out.println("↡  Nhấn 'y' để tạo đơn hàng mới  ||  Nhấn 'q' để quay lại   ↟");
+                System.out.println("↡  Nhấn 'p' để in hóa đơn        ||  Nhấn 't' để thoát      ↟");
                 System.out.print("➽");
                 String option = scanner.nextLine();
 
