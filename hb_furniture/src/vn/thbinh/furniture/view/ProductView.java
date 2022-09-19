@@ -149,14 +149,14 @@ public class ProductView {
         }
     }
 
-    private List<Product> findAll() {
-        List<Product> products = new ArrayList<>();
-        List<String> records = CSVUtils.readFile(PATH);
-        for (String record : records) {
-            products.add(Product.parse(record));
-        }
-        return products;
-    }
+//    private List<Product> findAll() {
+//        List<Product> products = new ArrayList<>();
+//        List<String> records = CSVUtils.readFile(PATH);
+//        for (String record : records) {
+//            products.add(Product.parse(record));
+//        }
+//        return products;
+//    }
 
     public void show(List<Product> productList) {
         System.out.println("▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨ DANH SÁCH SẢN PHẨM NỘI THẤT ▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨▨");

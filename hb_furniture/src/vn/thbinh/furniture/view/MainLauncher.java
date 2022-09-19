@@ -49,7 +49,7 @@ public class MainLauncher {
         System.out.println("❐      CHÀO MỪNG BẠN ĐẾN VỚI CỬA HÀNG NỘI THẤT      ❐");
         System.out.println("❐                     HB FURNITURE                  ❐");
         System.out.println("❐◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈❐");
-        System.out.println("❐◈                     MAIN MENU                  ◈❐");
+        System.out.println("❐◈                  MENU QUẢN LÝ                  ◈❐");
         System.out.println("❐◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈❐");
         System.out.println("❐                                                   ❐");
         System.out.println("❐                1.Quản lý người dùng               ❐");
@@ -115,7 +115,7 @@ public class MainLauncher {
         }
     }
     public static void inputUpdate() {
-        System.out.println("✿◕ ‿ ◕✿ ❀◕ ‿ ◕❀      Update     ✿ ❀◕ ‿ ◕❀ ❁◕ ‿ ◕❁");
+        System.out.println("✿◕ ‿ ◕✿ ❀◕ ‿ ◕❀    CẬP NHẬT     ✿ ❀◕ ‿ ◕❀ ❁◕ ‿ ◕❁");
         System.out.println("♥                                                   ♥");
         System.out.println("♥                1. Cập nhật giá                    ♥");
         System.out.println("♥                2. Cập nhật số lượng               ♥");

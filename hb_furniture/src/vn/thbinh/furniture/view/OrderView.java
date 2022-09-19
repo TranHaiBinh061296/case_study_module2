@@ -109,14 +109,9 @@ public class OrderView {
 
 
             do {
-                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞      TẠO ĐƠN     ↠↠↠↠↠↠↠↠↠↠↠↠");
-                System.out.println("↡                                                ↟ ");
-                System.out.println("↡            1. Nhấn 'y' để tiếp tục mua hàng     ↟");
-                System.out.println("↡            2. Nhấn 'q' để quay lại              ↟");
-                System.out.println("↡            3. Nhấn 'p' để in hóa đơn            ↟");
-                System.out.println("↡            4. Nhấn 't' để thoát                 ↟");
-                System.out.println("↡                                                 ↟");
-                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞↞↞↞↞↞↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠");
+                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞    TẠO ĐƠN THÀNH CÔNG    ↠↠↠↠↠↠↠↠↠↠↠↠");
+                System.out.println("↡  Nhấn 'y' để tiếp tục mua hàng  ||  Nhấn 'q' để quay lại   ↟");
+                System.out.println("↡  Nhấn 'p' để in hóa đơn         ||  Nhấn 't' để thoát      ↟");
                 System.out.print("➽");
                 String option = scanner.nextLine();
 
@@ -185,14 +180,9 @@ public class OrderView {
 
 
             do {
-                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞      TẠO ĐƠN     ↠↠↠↠↠↠↠↠↠↠↠↠");
-                System.out.println("↡                                                ↟ ");
-                System.out.println("↡            1. Nhấn 'y' để tiếp tục mua hàng     ↟");
-                System.out.println("↡            2. Nhấn 'q' để quay lại              ↟");
-                System.out.println("↡            3. Nhấn 'p' để in hóa đơn            ↟");
-                System.out.println("↡            4. Nhấn 't' để thoát                 ↟");
-                System.out.println("↡                                                 ↟");
-                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞↞↞↞↞↞↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠↠");
+                System.out.println("↞↞↞↞↞↞↞↞↞↞↞↞    TẠO ĐƠN THÀNH CÔNG    ↠↠↠↠↠↠↠↠↠↠↠↠");
+                System.out.println("↡  Nhấn 'y' để tiếp tục mua hàng  ||  Nhấn 'q' để quay lại   ↟");
+                System.out.println("↡  Nhấn 'p' để in hóa đơn         ||  Nhấn 't' để thoát      ↟");
                 System.out.print("➽");
                 String option = scanner.nextLine();
 

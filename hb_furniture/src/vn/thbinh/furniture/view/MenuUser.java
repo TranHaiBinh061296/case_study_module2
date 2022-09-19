@@ -24,6 +24,8 @@ public class MenuUser {
 
     public static void runOderUser() {
         menuOderUser();
+        System.out.println("Chọn chức năng:");
+        System.out.println("➽ ");
         Scanner scanner = new Scanner(System.in);
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {

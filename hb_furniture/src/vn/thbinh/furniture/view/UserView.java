@@ -59,10 +59,10 @@ public class UserView {
     }
 
     public void setRole(User user) {
-        System.out.println("= =  SET ROLE = =");
-        System.out.println("=    1. USER    =");
-        System.out.println("=    2. ADMIN   =");
-        System.out.println("= = = = = = = = =");
+        System.out.println("= = CHỌN PHÂN QUYỀN = =");
+        System.out.println("=       1. USER       =");
+        System.out.println("=       2. ADMIN      =");
+        System.out.println("= = = = = = = = = = = =");
         System.out.println("Chọn Role: ");
         System.out.print("➠");
         int choice = scanner.nextInt();
@@ -230,7 +230,7 @@ public class UserView {
         String username;
         do {
             if (!ValidateUtils.isUserNameValid(username = AppUtils.retrySring("Username"))) {
-                System.out.println(username + " của bạn không đúng định dạng. Vui lòng kiểm tra và nhập lại!");
+                System.out.println("Không đúng định dạng. Vui lòng kiểm tra và nhập lại!");
                 System.out.print("⭆ ");
                 continue;
             }

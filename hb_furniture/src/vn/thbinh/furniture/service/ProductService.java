@@ -31,10 +31,6 @@ public class ProductService implements IProductService{
     }
 
 
-//    @Override
-//    public List<Product> getItem() {
-//        return null;
-//    }
 
     @Override
     public void add(Product newProduct) {

@@ -1,8 +1,6 @@
 package vn.thbinh.furniture.model;
 
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 
 public class User {
     private long id;

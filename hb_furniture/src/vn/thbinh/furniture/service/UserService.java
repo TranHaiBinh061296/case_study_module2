@@ -129,35 +129,6 @@ public class UserService implements IUserService {
         return false;
     }
 
-    @Override
-    public boolean existsByEmail(String email) {
-        List<User> users = findAll();
-        for (User user : users) {
-            if (user.getEmail().equals(email))
-                return true;
-        }
-        return false;
-    }
-
-    @Override
-    public boolean existsByPhone(String phone) {
-        List<User> users = findAll();
-        for (User user : users) {
-            if (user.getMobile().equals(phone))
-                return true;
-        }
-        return false;
-    }
-
-    @Override
-    public boolean existsByUsername(String userName) {
-        List<User> users = findAll();
-        for (User user : users) {
-            if (user.getUsername().equals(userName))
-                return true;
-        }
-        return false;
-    }
 
     @Override
     public User findById(int id) {

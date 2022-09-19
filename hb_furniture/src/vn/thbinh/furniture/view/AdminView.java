@@ -6,7 +6,6 @@ import vn.thbinh.furniture.service.IUserService;
 import vn.thbinh.furniture.service.UserService;
 import vn.thbinh.furniture.utils.AppUtils;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,7 +21,7 @@ public class AdminView {
     public void adminLogin() {
         boolean isRetry = false;
         System.out.println("✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠   HB FUMITURE  ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ✠ ");
-        System.out.println("▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩  Đăng nhập    ▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩");
+        System.out.println("▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩   Đăng nhập    ▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩");
         do {
             System.out.println("Tên tài khoản: ");
             System.out.print("➣");
@@ -35,10 +34,12 @@ public class AdminView {
                 System.out.println("Tài khoản không hợp lệ!");
                 isRetry = isRetry();
             } else if (user.getRole() == Role.ADMIN) {
-                System.out.println("Đăng nhập thành công♥♥♥");
+                System.out.println(" ♥♥♥ Đăng nhập thành công ♥♥♥ ");
+                System.out.println(" ♥♥♥ Chào mừng Admin " + user.getFullName() + " ♥♥♥");
                 MainLauncher.menuOption();
             } else if (user.getRole() == Role.USER) {
-                System.out.println("Đăng nhập thành công♥♥♥");
+                System.out.println("Đăng nhập thành công ♥♥♥ ");
+                System.out.println(" ♥♥♥ Chào mừng user ♥♥♥ " + user.getFullName());
                 MenuUser.runOderUser();
             }
         } while (isRetry);
